@@ -1,0 +1,48 @@
+@mixin util_margin($class) {
+  &#{$class} {
+    @for $n from 1 through 20 {
+      &l-#{$n} {
+        margin-left: ($utility-step * $n);
+      }
+      &r-#{$n} {
+        margin-right: ($utility-step * $n);
+      }
+      &t-#{$n} {
+        margin-top: ($utility-step * $n);
+      }
+      &b-#{$n} {
+        margin-bottom: ($utility-step * $n);
+      }
+    }
+    &l-auto {
+      margin-left: auto;
+    }
+    &r-auto {
+      margin-right: auto;
+    }
+    &t-auto {
+      margin-top: auto;
+    }
+    &b-auto {
+      margin-bottom: auto;
+    }
+    &x-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+@each $name, $width in $breakpoints {
+  @media screen and (min-width: $width) {
+    .#{$name}\: {
+        @include util_margin('m')
+    }
+  }
+
+}
+
+@include util_margin('.m')
+
+
+
+

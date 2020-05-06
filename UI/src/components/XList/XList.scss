@@ -1,0 +1,15 @@
+.x-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  &_horizontal {
+    flex-direction: row;
+  }
+  &_flat {
+    .x-list__item {
+      border-radius: 0;
+      border-width: 0;
+    }
+  }
+}

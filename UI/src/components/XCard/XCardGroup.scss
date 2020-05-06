@@ -1,0 +1,16 @@
+@import "../../style/styles";
+.x-card-group {
+  display: flex;
+  flex-flow: row wrap;
+  &_columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    grid-column-gap: 1.25rem;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+  }
+}

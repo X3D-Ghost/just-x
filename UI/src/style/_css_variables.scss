@@ -1,0 +1,59 @@
+:root {
+  --font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size: 16px;
+  --font-size-small: .75rem;
+  --font-size-large: 1.5rem;
+
+  --line-height-default: 1.45;
+
+  //colors
+
+  @each $name, $color in $baseColors {
+    --color-#{$name}: #{$color};
+  }
+
+  --color-primary: var(--paper-blue-500);
+  --color-primary-light: var(--paper-blue-300);
+  --color-primary-dark: var(--paper-blue-800);
+  --color-secondary: var(--paper-purple-500);
+  --color-secondary-light: var(--paper-purple-300);
+  --color-secondary-dark: var(--paper-purple-800);
+  --color-warning: var(--paper-orange-500);
+  --color-warning-light: var(--paper-orange-300);
+  --color-warning-dark: var(--paper-orange-800);
+  --color-success: var(--paper-green-500);
+  --color-success-light: var(--paper-green-300);
+  --color-success-dark: var(--paper-green-700);
+  --color-error: var(--paper-red-500);
+  --color-error-light: var(--paper-red-300);
+  --color-error-dark: var(--paper-red-700);
+  --color-info: var(--paper-blue-300);
+  --color-info-light: var(--paper-blue-50);
+  --color-info-dark: var(--paper-blue-500);
+
+
+  //colors
+
+  --bg-color: var(--paper-blue-50);
+
+  --text-color: var(--paper-grey-900);
+
+  --link-color: var(--color-primary);
+
+  --muted-color: var(--paper-grey-200);
+
+
+  --space-unit: 1rem;
+
+  --primary-border-radius: .25rem;
+
+  --card-content-padding: 1.25rem;
+
+  /*buttons*/
+  --default-button-bg-color: hsl(0, 0%, 96%);
+  --default-button-text-color: hsla(0, 0%, 0%, 0.87);
+
+
+}
+@import "color_palette";

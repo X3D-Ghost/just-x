@@ -1,0 +1,36 @@
+@import "../../style/styles";
+.x-alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  color: white;
+  @each $name in $main-colors {
+    &_#{$name} {
+      background-color: var(--color-#{$name});
+      &.x-alert_outlined {
+        background-color: white;
+        color: var(--color-#{$name});
+        border-color: var(--color-#{$name});
+      }
+      &.x-alert_text {
+        color: var(--color-#{$name});
+        background-color: transparent;
+        &:before {
+          content: '';
+          background-color: currentColor;
+          opacity: 0.12;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &.x-alert_tile {
+        border-radius: 0;
+      }
+    }
+  }
+}

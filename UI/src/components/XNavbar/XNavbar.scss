@@ -1,0 +1,53 @@
+@import "../../style/styles";
+.x-navbar {
+  align-items: stretch;
+  display: flex;
+  &_fixed_top {
+    position: fixed;
+    top: 0;
+  }
+  &_sticky_top {
+    position: sticky;
+    top: 0;
+  }
+  @each $name, $color in $baseColors {
+    &_#{$name} {
+      background-color: #{$color};
+    }
+  }
+  &_transparent {
+    background: transparent;
+  }
+
+  &__brand {
+    align-items: stretch;
+    display: flex;
+    flex-shrink: 0;
+    min-height: 3.25rem;
+  }
+  &__burger {
+
+  }
+
+  &__menu {
+    display: none;
+    &_show {
+      display: block;
+    }
+  }
+}
+
+.burger {
+  &__line {
+    background-color: currentColor;
+    display: block;
+    height: 1px;
+    left: calc(50% - 8px);
+    position: absolute;
+    transform-origin: center;
+    transition-duration: 86ms;
+    transition-property: background-color,opacity,transform;
+    transition-timing-function: ease-out;
+    width: 16px;
+  }
+}

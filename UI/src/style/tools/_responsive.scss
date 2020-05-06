@@ -1,0 +1,11 @@
+@mixin make-responsive() {
+  @content;
+  @each $name, $width in $breakpoints {
+    @media screen and (min-width: $width) {
+      .#{$name}\: {
+        @content;
+      }
+    }
+
+  }
+}

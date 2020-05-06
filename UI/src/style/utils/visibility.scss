@@ -1,0 +1,27 @@
+.visually-hidden {
+  @include visually-hidden
+}
+
+@each $name, $width in $breakpoints {
+  #{$name}\: {
+    @include media(#{$name}) {
+      &visually-hidden {
+        @include visually-hidden
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@each $name, $width in $breakpoints {
+  #{$name}\: {
+    @include media(#{$name}) {
+      &hidden {
+        display: none;
+      }
+    }
+  }
+}

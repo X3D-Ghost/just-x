@@ -1,0 +1,17 @@
+@import "../../style/styles";
+$container-padding: 1rem;
+.x-container, .container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $card-content-padding;
+  padding-right: $card-content-padding;
+  @each $name, $width in $breakpoints {
+    @media only screen and (min-width: $width){
+      max-width: map_get($container-widths, $name)
+    }
+  }
+  &_fluid {
+    max-width: 100% !important;
+  }
+}

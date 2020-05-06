@@ -1,0 +1,65 @@
+$breakpoints: (
+  'xs': 640px,
+  'sm': 768px,
+  'md': 1024px,
+  'lg': 1280px,
+  'xl': 1440px,
+  'xxl': 1920px
+);
+
+$container-widths: (
+  'xs': 100%,
+  'sm': 768px,
+  'md': 1024px,
+  'lg': 1280px,
+  'xl': 1440px,
+  'xxl': 1440px
+);
+
+$font-family: var(--font-family);
+
+$base-font-size: var(--font-size);
+$small-font-size: var(--font-size-small);
+$large-font-size: var(--font-size-large);
+
+$line-height-default: var(--line-height-default);
+
+$font-weights: (
+  'thin': 100,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+  'black': 900
+);
+
+$transition: (
+  'fast-out-slow-in': cubic-bezier(0.4, 0, 0.2, 1),
+  'linear-out-slow-in': cubic-bezier(0, 0, 0.2, 1),
+  'fast-out-linear-in': cubic-bezier(0.4, 0, 1, 1),
+  'ease-in-out': cubic-bezier(0.4, 0, 0.6, 1),
+  'fast-in-fast-out': cubic-bezier(0.25, 0.8, 0.25, 1),
+  'swing': cubic-bezier(0.25, 0.8, 0.5, 1)
+);
+
+$primary-transition: 0.3s map-get($transition, 'swing') !default;
+$secondary-transition: 0.2s map-get($transition, 'ease-in-out') !default;
+
+$primary-border-radius: var(--primary-border-radius);
+
+$button-font-weight: 400;
+
+$card-content-padding: var(--card-content-padding);
+
+$utility-step: 0.25rem;
+
+$main-colors: (
+'accent',
+  'primary',
+  'secondary',
+  'tretiary',
+  'success',
+  'warning',
+  'error',
+  'info'
+)

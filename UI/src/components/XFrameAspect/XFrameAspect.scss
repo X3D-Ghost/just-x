@@ -1,0 +1,6 @@
+.x-frame {
+ display: flex;
+  &__spacer {
+    flex-grow: 1!important;
+  }
+}

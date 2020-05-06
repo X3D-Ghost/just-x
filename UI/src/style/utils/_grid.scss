@@ -1,0 +1,23 @@
+
+
+@mixin grid_util($cols:24) {
+  .grid {
+    display: grid;
+    &_cols {
+      @for $i from 1 through $cols {
+        &_#{$i} {
+          grid-template-columns: repeat($i, minmax(0, 1fr));
+        }
+      }
+    }
+  }
+}
+@include grid_util();
+@each $name, $width in $breakpoints {
+  @media screen and (min-width: $width) {
+    .#{$name}\:{
+      @include grid_util()
+    }
+  }
+
+}
