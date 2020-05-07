@@ -7,7 +7,7 @@ import { XFrameAspect } from './XFrameAspect'
 import { XEmbed } from './XEmbed'
 import { XHeading } from './XHeading'
 import { XNavbar } from './XNavbar'
-import { XInput } from './Inputs/XInput'
+import { XInput, XTextInput, XTextarea } from './Inputs'
 export {
   XButton,
   XCard,
@@ -19,4 +19,6 @@ export {
   XNavbar,
   XInput,
   XContainer,
+  XTextInput,
+  XTextarea,
 }

@@ -1,0 +1,85 @@
+@import "../../../style/styles";
+$class_name: 'x-field';
+.#{$class_name} {
+  padding-top: 12px;
+  margin-top: 4px;
+
+  &_outlined {
+    .#{$class_name}__input {
+      background-color: transparent;
+      border: 1px solid #363636;
+    }
+  }
+
+  &_rounded {
+    .#{$class_name}__input {
+      border-radius: 999px;
+    }
+  }
+
+  &_size_xs {
+    .#{$class_name}__input {
+      padding: 0.25rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  &_size_sm {
+    .#{$class_name}__input {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+  }
+
+  &_size_md {
+    .#{$class_name}__input {
+      padding: 0.75rem;
+      font-size: 1rem;
+    }
+  }
+
+  &_size_lg {
+    .#{$class_name}__input {
+      padding: 1rem;
+      font-size: 1.35rem;
+    }
+  }
+
+  @each $name in $main-colors {
+    &_#{$name} {
+      //color: white;
+      color: var(--color-#{$name});
+      //border-color: var(--color-#{$name});
+      &:not(:disabled) {
+        &:hover {
+          color: var(--color-#{$name}-light);
+          //border-color: var(--color-#{$name}-light);
+        }
+      }
+    }
+  }
+
+  &__label {
+    color: #363636;
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__input {
+    line-height: 20px;
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    flex: 1 1 auto;
+    max-height: 32px;
+
+  }
+
+  &__message {
+    display: block;
+    font-size: .75rem;
+    margin-top: .25rem;
+  }
+}
