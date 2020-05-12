@@ -9,7 +9,11 @@ html {
 
   background-color: var(--bg-color);
 }
+* {
+    box-sizing: border-box;
+  }
 
 html.overflow-y-hidden {
   overflow-y: hidden !important;
 }
+

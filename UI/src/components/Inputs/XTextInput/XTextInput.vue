@@ -1,6 +1,6 @@
 <template>
-  <div :class="classsList">
-    <label v-if="label" :for="inputId" class="x-text-field__label">
+  <div :class="classList">
+    <label v-if="label" :for="inputId" class="x-field__label">
       {{ label }}
     </label>
     <input
@@ -65,6 +65,10 @@ export default {
       type: String,
       default: null,
     },
+    bgColor: {
+      type: String,
+      default: 'white',
+    },
   },
   data() {
     return {
@@ -73,13 +77,14 @@ export default {
     }
   },
   computed: {
-    classsList() {
+    classList() {
       const className = 'x-field'
       const obj = [className]
       if (this.outlined) obj.push(`${className}_outlined`)
       if (this.rounded) obj.push(`${className}_rounded`)
       if (this.size) obj.push(`${className}_size_${this.size}`)
       if (this.type) obj.push(`${className}_${this.type}`)
+      if (this.bgColor) obj.push(`${className}_bg_${this.bgColor}`)
       return obj
     },
   },

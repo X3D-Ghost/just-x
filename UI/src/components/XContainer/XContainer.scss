@@ -6,6 +6,7 @@ $container-padding: 1rem;
   margin-right: auto;
   padding-left: $card-content-padding;
   padding-right: $card-content-padding;
+  max-width: 100%;
   @each $name, $width in $breakpoints {
     @media only screen and (min-width: $width){
       max-width: map_get($container-widths, $name)

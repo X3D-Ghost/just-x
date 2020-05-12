@@ -1,26 +1,31 @@
 @import "../../../style/styles";
 $class_name: 'x-field';
 .#{$class_name} {
-  padding-top: 12px;
-  margin-top: 4px;
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
 
   &_outlined {
+    position: relative;
+    background-color: inherit;
     .#{$class_name}__input {
       background-color: transparent;
-      border: 1px solid #363636;
+      border: 1px solid currentColor;
+      &:focus {
+        box-shadow: 0 0 3px 0 currentColor, 0 0 3px 0 currentColor inset;
+      }
+    }
+    .#{$class_name}__label {
+      position: absolute;
+      top: 0;
+      background-color: inherit;
+      margin-left: 0.5rem;
+      padding: 0.25rem;
     }
   }
 
   &_rounded {
     .#{$class_name}__input {
       border-radius: 999px;
-    }
-  }
-
-  &_size_xs {
-    .#{$class_name}__input {
-      padding: 0.25rem;
-      font-size: 0.75rem;
     }
   }
 
@@ -48,32 +53,40 @@ $class_name: 'x-field';
 
   @each $name in $main-colors {
     &_#{$name} {
-      //color: white;
       color: var(--color-#{$name});
-      //border-color: var(--color-#{$name});
       &:not(:disabled) {
         &:hover {
           color: var(--color-#{$name}-light);
-          //border-color: var(--color-#{$name}-light);
         }
+        .#{$class_name}__input {
+        }
+
       }
+    }
+    &_bg_#{$name} {
+      background-color: var(--color-#{$name});
     }
   }
 
   &__label {
-    color: #363636;
+    color: inherit;
     display: block;
     font-size: 1rem;
     font-weight: 600;
+    background-color: inherit;
   }
 
   &__input {
-    line-height: 20px;
+    line-height: 1.25rem;
     max-width: 100%;
     min-width: 0;
     width: 100%;
     flex: 1 1 auto;
-    max-height: 32px;
+    max-height: 2rem;
+    color: inherit;
+    &:focus {
+      outline: none;
+    }
 
   }
 

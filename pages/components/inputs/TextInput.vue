@@ -20,6 +20,27 @@
       <x-text-input label="default" type="success" value="" message="mess" />
       <x-text-input label="default" type="warning" value="" message="mess" />
       <x-text-input label="default" type="error" value="" message="mess" />
+      <x-text-input
+        label="outlined"
+        type="primary"
+        value=""
+        message="mess"
+        outlined
+      />
+      <x-text-input
+        label="outlined"
+        type="error"
+        value=""
+        message="mess"
+        outlined
+      />
+      <x-text-input
+        label="outlined"
+        type="success"
+        value=""
+        message="mess"
+        outlined
+      />
     </section>
   </div>
 </template>

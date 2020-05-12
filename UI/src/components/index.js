@@ -8,6 +8,7 @@ import { XEmbed } from './XEmbed'
 import { XHeading } from './XHeading'
 import { XNavbar } from './XNavbar'
 import { XInput, XTextInput, XTextarea } from './Inputs'
+import { XForm } from './XForm'
 export {
   XButton,
   XCard,
@@ -21,4 +22,5 @@ export {
   XContainer,
   XTextInput,
   XTextarea,
+  XForm,
 }
