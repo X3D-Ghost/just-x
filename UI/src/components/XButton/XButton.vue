@@ -4,6 +4,7 @@
     :type="buttonType"
     :disabled="disabled"
     :class="[classList]"
+    @click="$emit('click')"
   >
     <span v-if="iconLeft" class="x-button__icon x-button__icon_left"></span>
     <slot></slot>
@@ -59,6 +60,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    circle: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     classList() {
@@ -69,7 +74,8 @@ export default {
       if (this.rounded) classlist.push(`${className}_rounded`)
       if (this.outlined) classlist.push(`${className}_outlined`)
       if (this.text) classlist.push(`${className}_text`)
-      classlist.push(`${className}_${this.type}`)
+      if (this.type) classlist.push(`${className}_${this.type}`)
+      if (this.circle) classlist.push(`${className}_circle`)
       return classlist
     },
   },

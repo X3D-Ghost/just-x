@@ -1,0 +1,21 @@
+@import "../../../style/styles";
+.x-layout {
+  --header-height: 50px;
+  --footer-height: 50px;
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas: "header header header header"
+  "content content content content"
+  "aside aside aside aside"
+  "footer footer footer footer";
+  grid-template-rows: var(--header-height) auto var(--footer-height);
+  @include md() {
+    --header-height: 100px;
+    --footer-height: 100px;
+    grid-template-areas: "header header header header"
+    "aside content content content"
+    "footer footer footer footer";
+    grid-template-rows: var(--header-height) auto var(--footer-height);
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

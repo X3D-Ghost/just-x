@@ -7,6 +7,7 @@
       active ? 'x-list-item_active' : '',
       disabled ? 'x-list-item_disabled' : '',
     ]"
+    :to="to"
   >
     <slot></slot>
   </component>
@@ -31,6 +32,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    to: {
+      type: String || Object,
+      default: null,
     },
   },
 }

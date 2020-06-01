@@ -1,0 +1,13 @@
+.customizer-wrapper {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background: white;
+}
+.customizer {
+  box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-blur) var(--shadow-thin)  var(--shadow-color);
+  padding: var(--space-unit);
+  &__section {
+    margin-bottom: calc(var(--space-unit) * 1.5);
+  }
+}

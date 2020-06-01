@@ -45,16 +45,16 @@ $transition: (
 $primary-transition: 0.3s map-get($transition, 'swing') !default;
 $secondary-transition: 0.2s map-get($transition, 'ease-in-out') !default;
 
-$primary-border-radius: var(--primary-border-radius);
+$primary-border-radius: var(--primary-border-radius, 1rem);
 
 $button-font-weight: 400;
 
-$card-content-padding: var(--card-content-padding);
+$card-content-padding: var(--card-content-padding, 1rem);
 
 $utility-step: 0.25rem;
 
 $main-colors: (
-'accent',
+  'accent',
   'primary',
   'secondary',
   'success',

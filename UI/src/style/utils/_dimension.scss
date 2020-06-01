@@ -1,0 +1,12 @@
+@include make-responsive() {
+  .width {
+    &_full {
+      width: 100%;
+    }
+  }
+  .height {
+    &_full {
+      height: 100%;
+    }
+  }
+}

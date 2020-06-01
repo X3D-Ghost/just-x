@@ -1,7 +1,8 @@
 <template>
-  <div class="x-card">
+  <div :class="cardClassList">
     <component
       :is="headerTag"
+      v-if="$slots.header"
       :class="[
         'x-card__header',
         `x-card__header_${headerType}`,
@@ -19,6 +20,7 @@
     </div>
     <component
       :is="footerTag"
+      v-if="$slots.footer"
       :class="[
         'x-card__footer',
         `x-card__footer_${footerType}`,
@@ -92,13 +94,40 @@ export default {
       type: String,
       default: null,
     },
+    flat: {
+      type: Boolean,
+      default: null,
+    },
+    depth: {
+      type: Boolean,
+      default: null,
+    },
+    rounded: {
+      type: Boolean,
+      default: null,
+    },
+    horizontal: {
+      type: Boolean,
+      default: null,
+    },
+    outlined: {
+      type: Boolean,
+      default: null,
+    },
   },
   computed: {
+    cardClassList() {
+      const obj = ['x-card']
+      if (this.flat) obj.push(`x-card_flat`)
+      if (this.outlined) obj.push(`x-card_outlined`)
+      if (this.horizontal) obj.push(`x-card_horizontal`)
+      if (this.bgType) obj.push(`bg-color_${this.bgType}`)
+      if (this.textType) obj.push(`x-card_text_${this.textType}`)
+      return obj
+    },
     bodyClasses() {
       const obj = ['x-card__content']
       if (this.overlay) obj.push('x-card__content_overlay')
-      if (this.bgType) obj.push(`x-card_bg_${this.bgType}`)
-      if (this.textType) obj.push(`x-card_text_${this.textType}`)
       return obj
     },
   },

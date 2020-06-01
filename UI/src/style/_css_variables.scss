@@ -13,6 +13,9 @@
     --color-#{$name}: #{$color};
   }
 
+  --color-accent: var(--paper-blue-500);
+  --color-accent-light: var(--paper-blue-300);
+  --color-accent-dark: var(--paper-blue-800);
   --color-primary: var(--paper-blue-500);
   --color-primary-light: var(--paper-blue-300);
   --color-primary-dark: var(--paper-blue-800);
@@ -29,7 +32,7 @@
   --color-error-light: var(--paper-red-300);
   --color-error-dark: var(--paper-red-700);
   --color-info: var(--paper-blue-300);
-  --color-info-light: var(--paper-blue-50);
+  --color-info-light: var(--paper-blue-200);
   --color-info-dark: var(--paper-blue-500);
 
   --color-black: var(--paper-grey-900);
@@ -40,6 +43,10 @@
   --bg-color: var(--paper-grey-50);
 
   --text-color: var(--paper-grey-900);
+
+  --header-text-color: var(--paper-blue-grey-50);
+  --header-brand-color: var(--header-text-color);
+  --header-brand-font-size: 3rem;
 
   --link-color: var(--color-primary);
 
@@ -55,7 +62,16 @@
   /*buttons*/
   --default-button-bg-color: hsl(0, 0%, 96%);
   --default-button-text-color: hsla(0, 0%, 0%, 0.87);
+  --button-space-mult: 1;
+  --button-space-unit: calc(var(--space-unit) * var(--button-space-mult, 1));
 
+
+  /* shadows */
+  --shadow-x: 0px;
+  --shadow-y: 0px;
+  --shadow-blur: calc(0.5 * var(--space-unit));
+  --shadow-thin: 0px;
+  --shadow-color: var(--paper-grey-900);
 
 }
 @import "color_palette";

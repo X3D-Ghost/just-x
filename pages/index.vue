@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import XContainer from '@/UI/src/components/XContainer/XContainer'
+import XContainer from '@/UI/src/components/Layout/XContainer/XContainer'
 export default {
   components: { XContainer },
   async asyncData(contenxt) {

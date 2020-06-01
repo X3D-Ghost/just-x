@@ -7,8 +7,10 @@
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: $primary-border-radius;
+  &:not(.x-card_flat) {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: var(--primary-border-radius, 1rem);
+  }
   &__header {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
@@ -34,6 +36,22 @@
     &_outline_#{$name} {
       color: #{$color};
       border-color: #{$color};
+    }
+  }
+
+  &_outlined {
+    border-color: currentColor;
+  }
+
+  &_flat {
+
+  }
+
+  &_horizontal {
+    flex-direction: row;
+    .x-card__header {
+    }
+    .x-card__footer {
     }
   }
 }

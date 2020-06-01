@@ -2,16 +2,16 @@
   &#{$class} {
     @for $n from 1 through 20 {
       &l-#{$n} {
-        margin-left: ($utility-step * $n);
+        margin-left: calc(var(--space-unit) * (#{$n} / 4));
       }
       &r-#{$n} {
-        margin-right: ($utility-step * $n);
+        margin-right: calc(var(--space-unit) * (#{$n} / 4));
       }
       &t-#{$n} {
-        margin-top: ($utility-step * $n);
+        margin-top: calc(var(--space-unit) * (#{$n} / 4));
       }
       &b-#{$n} {
-        margin-bottom: ($utility-step * $n);
+        margin-bottom: calc(var(--space-unit) * (#{$n} / 4));
       }
     }
     &l-auto {

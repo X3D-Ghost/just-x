@@ -1,0 +1,19 @@
+@include make-responsive() {
+  @for $n from 1 through 20 {
+    &d-#{$n} {
+      padding: calc(var(--space-unit) * (#{$n} / 4));
+    }
+    &l-#{$n} {
+      padding-left: calc(var(--space-unit) * (#{$n} / 4));
+    }
+    &r-#{$n} {
+      padding-right: calc(var(--space-unit) * (#{$n} / 4));
+    }
+    &t-#{$n} {
+      padding-top: calc(var(--space-unit) * (#{$n} / 4));
+    }
+    &b-#{$n} {
+      padding-bottom: calc(var(--space-unit) * (#{$n} / 4));
+    }
+  }
+}
