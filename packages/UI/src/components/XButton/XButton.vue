@@ -7,7 +7,9 @@
     @click="$emit('click')"
   >
     <span v-if="iconLeft" class="x-button__icon x-button__icon_left"></span>
-    <slot></slot>
+    <span class="x-button__content">
+      <slot></slot>
+    </span>
     <span v-if="iconRight" class="x-button__icon x-button__icon_right"></span>
   </component>
 </template>
