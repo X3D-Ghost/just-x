@@ -9,7 +9,10 @@ import Vue from 'vue'
 //
 // moduleAlias.addAlias('@vue-x-ui', '/UI/src/index.js')
 
-import VXUI from '@/UI/src'
+import VXUI from '../../UI/src/index.js'
+
+// eslint-disable-next-line no-console
+console.debug(VXUI)
 
 Vue.use(VXUI)
 

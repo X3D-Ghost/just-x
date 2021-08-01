@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [{ src: 'UI/src/style/main.scss', lang: 'scss' }],
+  css: [{ src: '../UI/src/style/main.scss', lang: 'scss' }],
   /*
    ** Plugins to load before mounting the App
    */
@@ -46,7 +46,11 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    '@nuxtjs/style-resources',
   ],
+  styleResources: {
+    scss: ['../UI/src/style/styles.scss'],
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -60,7 +64,11 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
-      config.resolve.alias['@vue-x-ui'] = '/UI/src'
+      config.resolve.alias['@vue-x-ui'] = '../UI'
     },
+  },
+  components: true,
+  storybook: {
+    // Options
   },
 }

@@ -2,9 +2,7 @@
   <div>
     <h1>X-Card</h1>
     <section class="mb-4">
-      <x-card>
-        XCard
-      </x-card>
+      <x-card> XCard </x-card>
     </section>
     <section class="mb-4">
       <x-card>

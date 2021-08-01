@@ -1,0 +1,44 @@
+@mixin media($breakpoint: 'sm', $type: min) {
+  @media only screen {
+	@media (#{$type}-width: map_get($breakpoints, $breakpoint)) {
+	  @content;
+	}
+  }
+}
+
+@mixin rwd($screen, $type: 'min', $screen2: 0) {
+  @if ($type = and) {
+	@media only screen and (min-width: $screen * 1px) and (max-width:  $screen2 * 1px) {
+	  @content;
+	}
+  }
+  @else {
+	@media only screen and (#{$type}-width: $screen * 1px) {
+	  @content;
+	}
+  }
+}
+
+@mixin xs { @include media('xs'){@content}}
+@mixin sm { @include media('lg'){@content}}
+@mixin md { @include media('md'){@content}}
+@mixin lg { @include media('lg'){@content}}
+@mixin xl { @include media('xl'){@content}}
+@mixin xxl { @include media('xxl'){@content}}
+
+@function get-media-prefix($breakpoint) {
+  @debug $breakpoint;
+  @debug $breakpoints;
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+  @if $breakpoint-value > 0 {
+	@return #{$breakpoint}\:;
+  }
+  @else {
+	@return ''
+  }
+}
+
+//@debug get-media-prefix('xs');
+//@debug get-media-prefix('sm');
+//@debug get-media-prefix('xl');
+//@debug get-media-prefix('xxl');

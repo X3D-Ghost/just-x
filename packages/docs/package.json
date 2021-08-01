@@ -1,5 +1,5 @@
 {
-  "name": "just-x",
+  "name": "just-x_docs",
   "version": "1.0.0",
   "description": "site creating framework",
   "author": "3DX-Ghost",
@@ -25,32 +25,35 @@
     }
   },
   "dependencies": {
-    "@mdi/font": "^5.2.45",
-    "@nuxtjs/axios": "^5.10.3",
+    "@mdi/font": "^5.9.55",
+    "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/dotenv": "^1.4.0",
-    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/pwa": "^3.3.5",
     "module-alias": "^2.2.2",
-    "npm": "^6.14.5",
-    "nuxt": "^2.12.2"
+    "nuxt": "^2.15.7"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^3.0.0",
-    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/eslint-config": "^6.0.1",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/storybook": "^4.1.1",
+    "@nuxtjs/style-resources": "^1.2.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^7.0.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-nuxt": "^1.0.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "husky": "^4.2.5",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^4.3.8",
     "link-module-alias": "^1.2.0",
-    "lint-staged": "^10.2.2",
+    "lint-staged": "^10.5.4",
     "node-sass": "^4.14.1",
-    "prettier": "^2.0.5",
+    "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
     "sass-loader": "^8.0.2",
-    "stylelint": "^13.4.0"
+    "stylelint": "^13.13.1"
   },
   "_moduleAliases": {
-    "vue-x-ui": "UI/src/index.js"
+    "vue-x-ui": "../UI",
+    "@vue-x-ui": "../UI"
   }
 }

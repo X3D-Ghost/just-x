@@ -1,48 +1,60 @@
-@mixin util_margin($class) {
-  &#{$class} {
-    @for $n from 1 through 20 {
-      &l-#{$n} {
-        margin-left: calc(var(--space-unit) * (#{$n} / 4));
-      }
-      &r-#{$n} {
-        margin-right: calc(var(--space-unit) * (#{$n} / 4));
-      }
-      &t-#{$n} {
-        margin-top: calc(var(--space-unit) * (#{$n} / 4));
-      }
-      &b-#{$n} {
-        margin-bottom: calc(var(--space-unit) * (#{$n} / 4));
-      }
-    }
-    &l-auto {
-      margin-left: auto;
-    }
-    &r-auto {
-      margin-right: auto;
-    }
-    &t-auto {
-      margin-top: auto;
-    }
-    &b-auto {
-      margin-bottom: auto;
-    }
-    &x-auto {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-}
-@each $name, $width in $breakpoints {
-  @media screen and (min-width: $width) {
-    .#{$name}\: {
-        @include util_margin('m')
-    }
-  }
-
-}
-
-@include util_margin('.m')
-
-
-
+//%ml-auto {
+//  margin-left: auto;
+//}
+//
+//%mr-auto {
+//  margin-right: auto;
+//}
+//
+//@mixin util_margin($class) {
+//  &#{$class} {
+//    @for $n from 1 through 20 {
+//      &l-#{$n} {
+//        margin-left: calc(var(--space-unit) * (#{$n} / 4));
+//      }
+//      &r-#{$n} {
+//        margin-right: calc(var(--space-unit) * (#{$n} / 4));
+//      }
+//      &t-#{$n} {
+//        margin-top: calc(var(--space-unit) * (#{$n} / 4));
+//      }
+//      &b-#{$n} {
+//        margin-bottom: calc(var(--space-unit) * (#{$n} / 4));
+//      }
+//    }
+//    &l-auto {
+//      //margin-left: auto;
+//      @extend %ml-auto;
+//    }
+//    &r-auto {
+//      //margin-right: auto;
+//      @extend %mr-auto;
+//    }
+//    &t-auto {
+//      margin-top: auto;
+//    }
+//    &b-auto {
+//      margin-bottom: auto;
+//    }
+//    &x-auto {
+//      //margin-left: auto;
+//      //margin-right: auto;
+//      @extend %ml-auto;
+//      @extend %ml-auto;
+//    }
+//  }
+//}
+//@each $name, $width in $breakpoints {
+//  @media screen and (min-width: $width) {
+//    .#{$name}\: {
+//        @include util_margin('m')
+//    }
+//  }
+//
+//}
+//
+//@include util_margin('.m')
+//
+//
+//
 

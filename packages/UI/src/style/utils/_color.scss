@@ -1,4 +1,4 @@
-@include make-responsive() {
+//@include make-responsive() {
   @each $name, $color in $baseColors {
     .color_#{$name} {
       color: #{$color};
@@ -19,4 +19,4 @@
       }
     }
   }
-}
+//}

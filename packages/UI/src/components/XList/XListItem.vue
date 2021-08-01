@@ -15,11 +15,11 @@
 
 <script>
 export default {
-  name: 'XListItem',
+  name: "XListItem",
   props: {
     tag: {
       type: String,
-      default: 'div',
+      default: "div",
     },
     type: {
       type: String,
@@ -38,9 +38,9 @@ export default {
       default: null,
     },
   },
-}
+};
 </script>
 
 <style lang="scss">
-@import 'XListItem';
+@import "XListItem";
 </style>

@@ -1,4 +1,4 @@
-@mixin grid_util($cols:24) {
+@mixin grid_util($cols: $grid-columns, $rows: $grid-rows) {
   .grid {
     display: grid;
     &_cols {
@@ -10,12 +10,34 @@
     }
   }
 }
-@include grid_util();
-@each $name, $width in $breakpoints {
-  @media screen and (min-width: $width) {
-    .#{$name}\:{
-      @include grid_util()
-    }
-  }
+$cols: $grid-columns;
+$rows: $grid-rows;
+//@include grid_util();
 
+
+@mixin create-grid($cols: $grid-columns, $rows: $grid-rows) {
+  @each $name, $width in $breakpoints {
+	@media screen and (min-width: $width) {
+	  $prefix: get-media-prefix($name);
+	  //.#{$prefix}{
+	  //  @include grid_util()
+	  //}
+	  @for $i from 1 through $cols {
+		$classname: #{$prefix}grid_cols_#{$i};
+		@include create-class($classname, grid-template-columns, repeat($i, minmax(0, 1fr)))
+	  }
+	}
+  }
+}
+
+@mixin create-grid-cols($cols: $grid-columns) {
+
+}
+
+@include create-grid();
+
+.grid {
+  display: grid;
+  grid-column-gap: $grid-gutter;
+  grid-row-gap: $grid-gutter;
 }

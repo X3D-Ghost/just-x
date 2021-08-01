@@ -1,46 +1,47 @@
 $breakpoints: (
-  'xs': 640px,
-  'sm': 768px,
-  'md': 1024px,
-  'lg': 1280px,
-  'xl': 1440px,
-  'xxl': 1920px
-);
+	'xs': 0,
+	'sm': 600px,
+	'md': 768px,
+	'lg': 1024px,
+	'xl': 1280px,
+	'xxl': 1400px
+) !default;
 
 $container-widths: (
-  'xs': 100%,
-  'sm': 768px,
-  'md': 1024px,
-  'lg': 1280px,
-  'xl': 1440px,
-  'xxl': 1440px
-);
+  //'xs': 100%,
+  //'sm': 540px,
+	'md': 720px,
+	'lg': 960px,
+	'xl': 1200px,
+	'xxl': 1320px
+) !default;
 
-$font-family: var(--font-family);
+$font-family: var(--font-family) !default;
 
-$base-font-size: var(--font-size);
-$small-font-size: var(--font-size-small);
-$large-font-size: var(--font-size-large);
+$base-font-size: var(--font-size) !default;
+$small-font-size: var(--font-size-small) !default;
+$large-font-size: var(--font-size-large) !default;
 
 $line-height-default: var(--line-height-default);
 
 $font-weights: (
-  'thin': 100,
-  'light': 300,
-  'regular': 400,
-  'medium': 500,
-  'bold': 700,
-  'black': 900
+	'thin': 100,
+	'light': 300,
+	'regular': 400,
+	'medium': 500,
+	'bold': 700,
+	'black': 900
 );
 
-$transition: (
-  'fast-out-slow-in': cubic-bezier(0.4, 0, 0.2, 1),
-  'linear-out-slow-in': cubic-bezier(0, 0, 0.2, 1),
-  'fast-out-linear-in': cubic-bezier(0.4, 0, 1, 1),
-  'ease-in-out': cubic-bezier(0.4, 0, 0.6, 1),
-  'fast-in-fast-out': cubic-bezier(0.25, 0.8, 0.25, 1),
-  'swing': cubic-bezier(0.25, 0.8, 0.5, 1)
-);
+$transition: () !default;
+$transition: map-merge($transition, (
+	'fast-out-slow-in': cubic-bezier(0.4, 0, 0.2, 1),
+	'linear-out-slow-in': cubic-bezier(0, 0, 0.2, 1),
+	'fast-out-linear-in': cubic-bezier(0.4, 0, 1, 1),
+	'ease-in-out': cubic-bezier(0.4, 0, 0.6, 1),
+	'fast-in-fast-out': cubic-bezier(0.25, 0.8, 0.25, 1),
+	'swing': cubic-bezier(0.25, 0.8, 0.5, 1)
+));
 
 $primary-transition: 0.3s map-get($transition, 'swing') !default;
 $secondary-transition: 0.2s map-get($transition, 'ease-in-out') !default;
@@ -54,13 +55,45 @@ $card-content-padding: var(--card-content-padding, 1rem);
 $utility-step: 0.25rem;
 
 $main-colors: (
-  'accent',
-  'primary',
-  'secondary',
-  'success',
-  'warning',
-  'error',
-  'info',
-  'white',
-  'black'
-)
+	'accent',
+	'primary',
+	'secondary',
+	'success',
+	'warning',
+	'error',
+	'info',
+	'white',
+	'black'
+);
+
+$space-unit: 1rem !default;
+
+$space-units: (
+	0: 0,
+	1: $space-unit * 0.5,
+	2: $space-unit * 0.75,
+	3: $space-unit * 1,
+	4: $space-unit * 1.5,
+	5: $space-unit * 1.75,
+	6: $space-unit * 2,
+	7: $space-unit * 2.5,
+	8: $space-unit * 3,
+) !default;
+
+//@for $n from 0 through 8 {
+//  //@debug map.set($space-units, $n, ($space-unit * $n / 4));
+//  $space-units: map_merge(($n: $space-unit * ($n / 4)), $space-units);
+//  @debug $space-units;
+//}
+
+@debug $space-units;
+
+
+$rounded: () !default;
+$rounded: map-merge($rounded, (
+	0:0,
+));
+
+$grid-columns: 24 !default;
+$grid-rows: $grid-columns !default;
+$grid-gutter: 1.5rem;

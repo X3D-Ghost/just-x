@@ -1,0 +1,39 @@
+@mixin create-utility($data) {
+  $class_name: map-get($data, 'classname');
+  $values: map-get($data, 'values');
+  $properties: map-get($data, 'property');
+  //@debug $class_name;
+  //@debug $values;
+  @debug $properties;
+  //@if (map-get($data, 'property') == 'string') {
+	//$properties: append((), map-get($data, 'property'))
+  //}
+  @each $key, $value in $values {
+	//@debug $key;
+	//@debug $value;
+	//@debug $properties;
+	$classname: #{$class_name}-#{$key};
+	@include create-class(#{$classname}, $properties, $value);
+	@if (map-get($data, 'responsive')) {
+	  @each $breakpoint-name, $width in $breakpoints {
+		@media screen and (min-width: $width) {
+		  //.#{$breakpoint-name}\:#{$class_name}-#{$value} {}
+		  @include create-class(#{$breakpoint-name}\:#{$classname}, $properties, $value);
+		}
+	  }
+	}
+  }
+}
+
+@mixin create-class($classname, $props, $value) {
+  //@debug $classname;
+  //@debug $props;
+  .#{$classname} {
+	@each $prop-value in $props {
+	  //@debug $prop-value;
+	  //@debug $value;
+	  #{$prop-value}: $value;
+	}
+  }
+}
+

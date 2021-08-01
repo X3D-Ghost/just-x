@@ -1,19 +1,85 @@
-@include make-responsive() {
-  @for $n from 1 through 20 {
-    &d-#{$n} {
-      padding: calc(var(--space-unit) * (#{$n} / 4));
-    }
-    &l-#{$n} {
-      padding-left: calc(var(--space-unit) * (#{$n} / 4));
-    }
-    &r-#{$n} {
-      padding-right: calc(var(--space-unit) * (#{$n} / 4));
-    }
-    &t-#{$n} {
-      padding-top: calc(var(--space-unit) * (#{$n} / 4));
-    }
-    &b-#{$n} {
-      padding-bottom: calc(var(--space-unit) * (#{$n} / 4));
-    }
-  }
-}
+//$properties: (
+//		p: (
+//				properties: (left, right, top, bottom)
+//		),
+//		pl: (
+//				properties: (left),
+//		),
+//		pr: (
+//				properties: (right),
+//		),
+//		pt: (
+//				properties: (top),
+//		),
+//		pb: (
+//				properties: (bottom),
+//		),
+//		px: (
+//				properties: (left, right),
+//		),
+//		py: (
+//				properties: (top, bottom),
+//		)
+//);
+
+//@include make-responsive() {
+//  @each $space-key, $space-value in $space-units {
+//	@each $key, $value in $properties {
+//	  &#{$key}-#{$space-key} {
+//		$properties: map-get($value, 'properties');
+//		@each $prop-key, $prop-value in $properties {
+//		  padding-#{$prop-key}: $space-value;
+//		}
+//	  }
+//	}
+//  }
+//}
+
+$utilities: (
+		"padding": (
+				property: (padding),
+				classname: p,
+				values: $space-units,
+				responsive: true,
+		),
+		"padding-left": (
+				property: (padding-left),
+				classname: pl,
+				values: $space-units,
+				responsive: true,
+		),
+		"padding-right": (
+				property: (padding-right),
+				classname: pr,
+				values: $space-units,
+				responsive: true,
+		),
+		"padding-top": (
+				property: (padding-top),
+				classname: pt,
+				values: $space-units,
+				responsive: true,
+		),
+		"padding-bottom": (
+				property: (padding-bottom),
+				classname: pb,
+				values: $space-units,
+				responsive: true,
+		),
+		"padding-x": (
+				property: (padding-left, padding-right),
+				classname: px,
+				values: $space-units,
+				responsive: true,
+		),
+		"padding-y": (
+				property: (padding-top, padding-bottom),
+				classname: py,
+				values: $space-units,
+				responsive: true,
+		),
+);
+
+//@each $key, $utility in $utilities {
+//  @include create-utility($utility);
+//}

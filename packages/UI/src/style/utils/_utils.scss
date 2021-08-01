@@ -1,0 +1,95 @@
+$utilities: () !default;
+$utilities: map_merge(
+		$utilities,
+		(
+			"padding": (
+				property: (padding),
+				classname: p,
+				values: $space-units,
+				responsive: true,
+			),
+			"padding-left": (
+				property: (padding-left),
+				classname: pl,
+				values: $space-units,
+				responsive: true,
+			),
+			"padding-right": (
+				property: (padding-right),
+				classname: pr,
+				values: $space-units,
+				responsive: true,
+			),
+			"padding-top": (
+				property: (padding-top),
+				classname: pt,
+				values: $space-units,
+				responsive: true,
+			),
+			"padding-bottom": (
+				property: (padding-bottom),
+				classname: pb,
+				values: $space-units,
+				responsive: true,
+			),
+			"padding-x": (
+				property: (padding-left, padding-right),
+				classname: px,
+				values: $space-units,
+				responsive: true,
+			),
+			"padding-y": (
+				property: (padding-top, padding-bottom),
+				classname: py,
+				values: $space-units,
+				responsive: true,
+			),
+			//margin
+			"margin": (
+				property: (margin),
+				classname: m,
+				values: map-merge($space-units, (auto: auto)),
+				responsive: true,
+			),
+			"margin-left": (
+				property: (margin-left),
+				classname: ml,
+				values: map-merge($space-units, (auto: auto)),
+				responsive: true,
+			),
+			"margin-right": (
+				property: (margin-right),
+				classname: mr,
+				values: map-merge($space-units, (auto: auto)),
+				responsive: true,
+			),
+			"margin-top": (
+				property: (margin-top),
+				classname: mt,
+				values: map-merge($space-units, (auto: auto)),
+				responsive: true,
+			),
+			"margin-bottom": (
+				property: (margin-bottom),
+				classname: mb,
+				values: map-merge($space-units, (auto: auto)),
+				responsive: true,
+			),
+			"margin-x": (
+				property: (margin-left, margin-right),
+				classname: mx,
+				values: map-merge($space-units, (auto: auto)),
+				responsive: true,
+			),
+			"margin-y": (
+				property: (margin-top, margin-bottom),
+				classname: my,
+				values: map-merge($space-units, (auto: auto)),
+				responsive: true,
+			),
+		)
+);
+
+@each $key, $utility in $utilities {
+  @include create-utility($utility);
+}
