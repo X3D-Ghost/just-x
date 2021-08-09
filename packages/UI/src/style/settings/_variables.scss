@@ -18,11 +18,20 @@ $container-widths: (
 
 $font-family: var(--font-family) !default;
 
-$base-font-size: var(--font-size) !default;
+$base-font-size: 1rem !default;
 $small-font-size: var(--font-size-small) !default;
 $large-font-size: var(--font-size-large) !default;
 
 $line-height-default: var(--line-height-default);
+
+$head-sizes: (
+	1: $base-font-size * 3,
+	2: $base-font-size * 2.75,
+	3: $base-font-size * 2.5,
+	4: $base-font-size * 2.25,
+	5: $base-font-size * 2,
+	6: $base-font-size * 1.5,
+);
 
 $font-weights: (
 	'thin': 100,

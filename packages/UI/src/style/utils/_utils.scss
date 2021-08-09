@@ -2,6 +2,29 @@ $utilities: () !default;
 $utilities: map_merge(
 		$utilities,
 		(
+			"text-align": (
+				property: (text-align),
+				classname: text,
+				values: (left:left,center: center, right:right, justify: justify),
+				responsive: true,
+			),
+			"text-transform": (
+				property: (text-transform),
+				classname: text,
+				values: (upper:uppercase, cap: capitalize, lower:lowercase, justify: justify),
+				responsive: true,
+			),
+			"text-weight": (
+				property: (font-weight),
+				classname: text,
+				values: $font-weights,
+			),
+			"float": (
+				property: (float),
+				classname: float,
+				values: (left:left, right:right, none: none),
+			),
+			//padding
 			"padding": (
 				property: (padding),
 				classname: p,
@@ -87,6 +110,64 @@ $utilities: map_merge(
 				values: map-merge($space-units, (auto: auto)),
 				responsive: true,
 			),
+			//display
+			"display": (
+				property: (display),
+				classname: '',
+				values: (
+					flex: flex,
+					inline-flex: inline-flex,
+					block: block,
+					inline-block: inline-block,
+					inline: inline,
+					grid: grid,
+					inline-grid: inline-grid,
+					table: table,
+					contents: contents,
+					hidden: none,
+					list: list,
+					list-item: list-item
+				),
+				responsive: true,
+			),
+			//flex
+			"flex-wrap": (
+				property: (flex-wrap),
+				classname: 'flex',
+				values: ('wrap': wrap, 'wrap-reverse': wrap-reverse, 'nowrap': nowrap),
+				responsive: true,
+			),
+			"flex-direction": (
+				property: (flex-direction),
+				classname: 'flex',
+				values: ('row': row, 'row-reverse': 'row-reverse', 'column': column, 'column-reverse': column-reverse),
+				responsive: true,
+			),
+			//grid
+			"grid-auto-flow": (
+				property: (grid-auto-flow),
+				classname: grid,
+				values: ('row': row, 'row-dense': row-dense, 'col': col, 'col-dense': col-dense),
+				responsive: true,
+			),
+			"grid-gap": (
+				property: (grid-gap),
+				classname: grid-gap,
+				values: map-merge((0:0), $space-units),
+				responsive: true,
+			),
+			"grid-gap-x": (
+				property: (grid-column-gap),
+				classname: grid-gap-x,
+				values: map-merge((0:0), $space-units),
+				responsive: true,
+			),
+			"grid-gap-y": (
+				property: (grid-row-gap),
+				classname: grid-gap-y,
+				values: map-merge((0:0), $space-units),
+				responsive: true,
+			)
 		)
 );
 

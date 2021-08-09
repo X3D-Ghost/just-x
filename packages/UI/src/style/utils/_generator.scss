@@ -16,9 +16,11 @@
 	@include create-class(#{$classname}, $properties, $value);
 	@if (map-get($data, 'responsive')) {
 	  @each $breakpoint-name, $width in $breakpoints {
-		@media screen and (min-width: $width) {
-		  //.#{$breakpoint-name}\:#{$class_name}-#{$value} {}
-		  @include create-class(#{$breakpoint-name}\:#{$classname}, $properties, $value);
+		@include media($breakpoint-name) {
+		  //@media screen and (min-width: $width) {
+			//.#{$breakpoint-name}\:#{$class_name}-#{$value} {}
+			@include create-class(#{$breakpoint-name}\:#{$classname}, $properties, $value);
+		  //}
 		}
 	  }
 	}

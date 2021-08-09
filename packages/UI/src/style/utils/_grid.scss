@@ -14,26 +14,78 @@ $cols: $grid-columns;
 $rows: $grid-rows;
 //@include grid_util();
 
-
 @mixin create-grid($cols: $grid-columns, $rows: $grid-rows) {
   @each $name, $width in $breakpoints {
-	@media screen and (min-width: $width) {
-	  $prefix: get-media-prefix($name);
-	  //.#{$prefix}{
-	  //  @include grid_util()
-	  //}
-	  @for $i from 1 through $cols {
-		$classname: #{$prefix}grid_cols_#{$i};
-		@include create-class($classname, grid-template-columns, repeat($i, minmax(0, 1fr)))
-	  }
-	}
+    @media screen and (min-width: $width) {
+      $prefix: get-media-prefix($name);
+      //.#{$prefix}{
+      //  @include grid_util()
+      //}
+      @for $i from 1 through $cols {
+        $classname: #{$prefix}grid_cols;
+        //@include create-class($classname, grid-template-columns, repeat($i, minmax(0, 1fr)));
+        .#{$classname} {
+		  &_#{$i} {
+			@include create-grid-cols($i);
+		  }
+        }
+		.#{$prefix}grid {
+		  &_flow {
+			&_col {
+			  grid-auto-flow: column;
+			  &-dense {
+				grid-auto-flow: column dense;
+			  }
+			}
+			&_row {
+			  grid-auto-flow: row;
+			  &-dense {
+				grid-auto-flow: row dense;
+			  }
+			}
+		  }
+		}
+        .#{$prefix}grid__col {
+          &_#{$i} {
+            @include create-grid-column($i);
+          }
+          &_start_#{$i} {
+            grid-column-start: $i;
+          }
+          &_end_#{$i} {
+            grid-column-end: $i;
+          }
+        }
+        .#{$prefix}grid__row {
+		  &_#{$i} {
+			@include create-grid-row($i);
+		  }
+		  &_start_#{$i} {
+			grid-row-start: $i;
+		  }
+		  &_end_#{$i} {
+			grid-row-end: $i;
+		  }
+        }
+      }
+    }
   }
 }
 
 @mixin create-grid-cols($cols: $grid-columns) {
-
+  grid-template-columns: repeat(#{$cols}, 1fr);
+  &:not(.grid) {
+    display: grid;
+  }
 }
 
+@mixin create-grid-column($col-width) {
+  grid-column: auto / span $col-width;
+}
+
+@mixin create-grid-row($col-width) {
+  grid-row: span $col-width;
+}
 @include create-grid();
 
 .grid {

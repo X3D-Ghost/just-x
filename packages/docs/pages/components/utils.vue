@@ -4,8 +4,14 @@
     <section>
       <h2>Padding</h2>
       <div v-for="(item, d) in utils.padding.classes" :key="d">
-        <div v-for="i in 9" :key="i" :class="`${item}-${i - 1}`">
-          {{ `${item}-${i - 1}` }}
+        <div v-for="(breakpoint, b) in breakpoints" :key="b">
+          <div
+            v-for="i in 9"
+            :key="i"
+            :class="`${breakpoint ? `${breakpoint}:` : ''}${item}-${i - 1}`"
+          >
+            {{ `${breakpoint ? `${breakpoint}:` : ''}${item}-${i - 1}` }}
+          </div>
         </div>
       </div>
     </section>
@@ -29,7 +35,7 @@ export default {
   name: 'Utilities',
   data() {
     return {
-      breakpoints: [],
+      breakpoints: ['', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
       values: [],
       utils: {
         padding: {

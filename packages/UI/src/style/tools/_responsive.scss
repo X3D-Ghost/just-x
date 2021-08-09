@@ -1,10 +1,15 @@
 @mixin make-responsive() {
-  @content;
-  @each $name, $width in $breakpoints {
-    @media screen and (min-width: $width) {
-      .#{$name}\: {
-        @content;
+  $temp-breakpoints: map-merge((0:0),$breakpoints);
+  @each $name, $width in $temp-breakpoints {
+    $prefix: get-media-prefix($name);
+    @if (map-has-key($breakpoints, $name)) {
+      @media screen and (min-width: $width) {
+        .#{$prefix} {
+          @content;
+        }
       }
+    } @else {
+      @content;
     }
 
   }

@@ -1,8 +1,42 @@
 @mixin media($breakpoint: 'sm', $type: min) {
-  @media only screen {
-	@media (#{$type}-width: map_get($breakpoints, $breakpoint)) {
-	  @content;
+  @if (map-has-key($breakpoints, $breakpoint)) and map-get($breakpoints, $breakpoint) > 0 {
+	@media only screen {
+	  @media (#{$type}-width: map_get($breakpoints, $breakpoint)) {
+		@content;
+	  }
 	}
+  } @else {
+	@content;
+  }
+}
+
+@mixin media-up($breakpoint) {
+  @include media($breakpoint, min){
+	@content;
+  }
+}
+@mixin media-down($breakpoint) {
+  @include media($breakpoint, max){
+	@content;
+  }
+}
+@mixin media-between($breakpoint-after, $breakpoint-before) {
+	@include media($breakpoint-after, min){
+	  @include media($breakpoint-before, max) {
+		@content;
+	  }
+	}
+
+}
+
+@mixin media-only($breakpoint) {
+  $min: map-get($breakpoints, $breakpoint);
+  $n: index(map-keys($breakpoints), $breakpoint);
+
+  @debug $n;
+  $max: map-get($breakpoints, nth(map-keys($breakpoints), $n + 1));
+  @media (min-width: $min) and (max-width: $max) {
+	@content;
   }
 }
 
@@ -19,22 +53,25 @@
   }
 }
 
-@mixin xs { @include media('xs'){@content}}
-@mixin sm { @include media('lg'){@content}}
-@mixin md { @include media('md'){@content}}
-@mixin lg { @include media('lg'){@content}}
-@mixin xl { @include media('xl'){@content}}
-@mixin xxl { @include media('xxl'){@content}}
+@mixin xs { @include media(xs){@content}}
+@mixin sm { @include media(lg){@content}}
+@mixin md { @include media(md){@content}}
+@mixin lg { @include media(lg){@content}}
+@mixin xl { @include media(xl){@content}}
+@mixin xxl { @include media(xxl){@content}}
 
 @function get-media-prefix($breakpoint) {
   @debug $breakpoint;
   @debug $breakpoints;
   $breakpoint-value: map-get($breakpoints, $breakpoint);
-  @if $breakpoint-value > 0 {
-	@return #{$breakpoint}\:;
-  }
-  @else {
-	@return ''
+  @if map-has-key($breakpoints, $breakpoint) {
+	@if $breakpoint-value > 0 {
+	  @return #{$breakpoint}\:;
+	} @else {
+	  @return ''
+	}
+  } @else {
+	@return null;
   }
 }
 

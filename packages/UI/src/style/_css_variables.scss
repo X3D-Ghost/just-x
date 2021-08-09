@@ -7,6 +7,8 @@
 
   --line-height-default: 1.45;
 
+  --line-height-body: 1.5;
+
   //colors
 
   @each $name, $color in $baseColors {

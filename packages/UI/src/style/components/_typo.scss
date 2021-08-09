@@ -1,0 +1,45 @@
+h1, .h1 {
+  font-size: map-get($head-sizes, 1);
+}
+
+h2, .h2 {
+  font-size: map-get($head-sizes, 2);
+}
+
+h3, .h3 {
+  font-size: map-get($head-sizes, 3);
+}
+
+h4, .h4 {
+  font-size: map-get($head-sizes, 4);
+}
+
+h5, .h5 {
+  font-size: map-get($head-sizes, 5);
+}
+
+h6, .h6 {
+  font-size: map-get($head-sizes, 6);
+}
+
+//text-aligning in utils/_utils.scss
+
+.body-text {
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  &-2 {
+    font-size: 0.875rem;
+    letter-spacing: 0.015em;
+  }
+  &-3 {
+    font-size: 0.75rem;
+    letter-spacing: 0.01em;
+  }
+}
+
+blockquote {
+  padding-left: 1rem;
+}
+cite {
+  padding-left: 1rem;
+}
