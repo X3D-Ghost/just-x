@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'XButton',
+  name: "XButton",
   props: {
     block: {
       type: Boolean,
@@ -28,11 +28,11 @@ export default {
     },
     size: {
       type: String,
-      default: 'md',
+      default: "md",
     },
     buttonType: {
       type: String,
-      default: 'button',
+      default: "button",
     },
     type: {
       type: String,
@@ -40,7 +40,7 @@ export default {
     },
     tag: {
       type: String,
-      default: 'button',
+      default: "button",
     },
     iconLeft: {
       type: String,
@@ -69,21 +69,23 @@ export default {
   },
   computed: {
     classList() {
-      const className = 'x-button'
-      const classlist = [className]
-      if (this.size) classlist.push(`${className}_${this.size}`)
-      if (this.block) classlist.push(`${className}_block`)
-      if (this.rounded) classlist.push(`${className}_rounded`)
-      if (this.outlined) classlist.push(`${className}_outlined`)
-      if (this.text) classlist.push(`${className}_text`)
-      if (this.type) classlist.push(`${className}_${this.type}`)
-      if (this.circle) classlist.push(`${className}_circle`)
-      return classlist
+      const className = "x-button";
+      const classlist = [className];
+      if (this.size) classlist.push(`${className}_${this.size}`);
+      if (this.block) classlist.push(`${className}_block`);
+      if (this.rounded) classlist.push(`${className}_rounded`);
+      if (this.outlined) classlist.push(`${className}_outlined`);
+      if (this.text) classlist.push(`${className}_text`);
+      if (this.type) classlist.push(`${className}_${this.type}`);
+      if (this.circle) classlist.push(`${className}_circle`);
+      return classlist;
     },
   },
-}
+};
+
+// import './XButton.scss';
 </script>
 
 <style lang="scss">
-@import './XButton.scss';
+@import "./XButton.scss";
 </style>

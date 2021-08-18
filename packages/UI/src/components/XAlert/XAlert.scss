@@ -7,7 +7,7 @@
   border-radius: .25rem;
   color: white;
   @each $name in $main-colors {
-    &_#{$name} {
+    &_#{"" + $name} {
       background-color: var(--color-#{$name});
       &.x-alert_outlined {
         background-color: white;

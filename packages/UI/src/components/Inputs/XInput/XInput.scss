@@ -66,7 +66,7 @@ $class_name: 'x-field';
   }
 
   @each $name in $main-colors {
-    &_#{$name} {
+    &_#{"" + $name} {
       color: var(--color-#{$name});
       &:not(:disabled) {
         &:hover {

@@ -20,26 +20,26 @@
 
 <script>
 export default {
-  name: 'XNavbar',
+  name: "XNavbar",
   props: {
     tag: {
       type: String,
-      default: 'nav',
+      default: "nav",
     },
   },
   data() {
     return {
       isMenuShow: true,
-    }
+    };
   },
   methods: {
     toggleMenu() {
-      this.isMenuShow = !this.isMenuShow
+      this.isMenuShow = !this.isMenuShow;
     },
   },
-}
+};
 </script>
 
 <style lang="scss">
-@import 'XNavbar';
+@import "XNavbar";
 </style>

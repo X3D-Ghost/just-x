@@ -1,14 +1,14 @@
 //@include make-responsive() {
   @each $name, $color in $baseColors {
-    .color_#{$name} {
+    .color_#{"" + $name} {
       color: #{$color};
     }
-    .bg-color_#{$name} {
+    .bg-color_#{"" + $name} {
       background-color: #{$color};
     }
-    .bg-grad_#{$name}{
+    .bg-grad_#{"" + $name}{
       @each $name2, $color2 in $baseColors {
-        &-#{$name2} {
+        &-#{"" + $name2} {
           &_top {
             background-image: linear-gradient(to top, #{$color}, #{$color2});
           }

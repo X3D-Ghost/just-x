@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: 'XCard',
+  name: "XCard",
   props: {
     header: {
       default: null,
@@ -44,7 +44,7 @@ export default {
     },
     headerTag: {
       type: String,
-      default: 'div',
+      default: "div",
     },
     headerType: {
       type: String,
@@ -60,7 +60,7 @@ export default {
     },
     footerTag: {
       type: String,
-      default: 'div',
+      default: "div",
     },
     footerType: {
       type: String,
@@ -117,23 +117,23 @@ export default {
   },
   computed: {
     cardClassList() {
-      const obj = ['x-card']
-      if (this.flat) obj.push(`x-card_flat`)
-      if (this.outlined) obj.push(`x-card_outlined`)
-      if (this.horizontal) obj.push(`x-card_horizontal`)
-      if (this.bgType) obj.push(`bg-color_${this.bgType}`)
-      if (this.textType) obj.push(`x-card_text_${this.textType}`)
-      return obj
+      const obj = ["x-card"];
+      if (this.flat) obj.push(`x-card_flat`);
+      if (this.outlined) obj.push(`x-card_outlined`);
+      if (this.horizontal) obj.push(`x-card_horizontal`);
+      if (this.bgType) obj.push(`bg-color_${this.bgType}`);
+      if (this.textType) obj.push(`x-card_text_${this.textType}`);
+      return obj;
     },
     bodyClasses() {
-      const obj = ['x-card__content']
-      if (this.overlay) obj.push('x-card__content_overlay')
-      return obj
+      const obj = ["x-card__content"];
+      if (this.overlay) obj.push("x-card__content_overlay");
+      return obj;
     },
   },
-}
+};
 </script>
 
 <style lang="scss">
-@import 'XCard';
+@import "XCard";
 </style>

@@ -1,20 +1,20 @@
 <template>
-  <component :is="'a'">
+  <component :is="tag" :to="to">
     <slot></slot>
   </component>
 </template>
 
 <script>
 export default {
-  name: 'XLink',
+  name: "XLink",
   props: {
     tag: {
       type: String,
-      default: 'n-link',
+      default: "n-link",
     },
     to: {
       type: String || Object,
-      default: '/',
+      default: "/",
     },
     append: {
       type: Boolean,
@@ -30,7 +30,7 @@ export default {
     },
     target: {
       type: String,
-      default: '_self',
+      default: "_self",
     },
     rel: {
       type: String,
@@ -45,7 +45,7 @@ export default {
       default: false,
     },
   },
-}
+};
 </script>
 
 <style scoped></style>

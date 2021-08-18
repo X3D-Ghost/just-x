@@ -1,0 +1,6 @@
+/.idea
+/.idea/*
+/packages/UI/.yarn/
+/packages/UI/node_modules/.cache/storybook/
+/packages/UI/.pnp.js
+/packages/UI/yarn.lock

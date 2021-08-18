@@ -1,6 +1,6 @@
-import { XButton } from './XButton'
-import { XLink } from './XLink'
-import { XCard } from './XCard'
+import { XButton } from "./XButton";
+import { XLink } from "./XLink";
+import { XCard } from "./XCard";
 import {
   XHeader,
   XContent,
@@ -10,16 +10,16 @@ import {
   XLayout,
   XContainer,
   XSidebar,
-} from './Layout'
-import { XAlert } from './XAlert'
-import { XFrameAspect } from './XFrameAspect'
-import { XEmbed } from './XEmbed'
-import { XHeading } from './XHeading'
-import { XNavbar } from './XNavbar'
-import { XInput, XTextInput, XTextarea } from './Inputs'
-import { XForm } from './XForm'
-import { XList, XListItem } from './XList'
-import { Customizer } from './Customizer'
+} from "./Layout";
+import { XAlert } from "./XAlert";
+import { XFrameAspect } from "./XFrameAspect";
+import { XEmbed } from "./XEmbed";
+import { XHeading } from "./XHeading";
+import { XNavbar } from "./XNavbar";
+import { XInput, XTextInput, XTextarea } from "./Inputs";
+import { XForm } from "./XForm";
+import { XList, XListItem } from "./XList";
+import { Customizer } from "./Customizer";
 export {
   XHeader,
   XContent,
@@ -44,4 +44,4 @@ export {
   XList,
   XListItem,
   Customizer,
-}
+};

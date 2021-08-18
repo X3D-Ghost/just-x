@@ -12,7 +12,7 @@
   //colors
 
   @each $name, $color in $baseColors {
-    --color-#{$name}: #{$color};
+    --color-#{"" + $name}: #{$color};
   }
 
   --color-accent: var(--paper-blue-500);
@@ -55,17 +55,27 @@
   --muted-color: var(--paper-grey-200);
 
 
-  --space-unit: 1rem;
+  --space-unit: $space-unit;
 
   --primary-border-radius: .25rem;
 
   --card-content-padding: 1.25rem;
 
+  /* borders */
+  --base-border-radius: .25rem;
+  --sm-border-radius: .125rem;
+  --lg-border-radius: .5rem;
+  --xl-border-radius: .75rem;
+  --rounded-border-radius: 100%;
+  --circle-border-radius: 50%;
+
+
   /*buttons*/
   --default-button-bg-color: hsl(0, 0%, 96%);
   --default-button-text-color: hsla(0, 0%, 0%, 0.87);
   --button-space-mult: 1;
-  --button-space-unit: calc(var(--space-unit) * var(--button-space-mult, 1));
+  --button-space-unit: calc(var(--space-unit, 1rem) * var(--button-space-mult, 1));
+  --button-border-radius: calc(1);
 
 
   /* shadows */

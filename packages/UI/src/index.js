@@ -1,4 +1,4 @@
-import * as components from './components'
+import * as components from "./components";
 
 /* import {
   XButton,
@@ -38,7 +38,7 @@ export default {
     // console.log('install')
     Object.values(components).forEach((component) => {
       // console.log(component)
-      Vue.component(component.name, component)
-    })
+      Vue.component(component.name, component);
+    });
   },
-}
+};

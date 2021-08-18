@@ -40,7 +40,7 @@
   &:disabled {
     cursor: not-allowed;
     opacity: var(--button-disabled-opacity, 0.4);
-    pointer-events: none;
+    //pointer-events: none;
   }
 
   // sizes
@@ -75,7 +75,7 @@
   //color scheme types
 
   @each $name in $main-colors {
-    &_#{$name}
+    &_#{"" + $name}
     {
       &:not(:disabled):not(.x-button_text) {
         &:hover {
@@ -132,10 +132,10 @@
 
   &_circle {
     border-radius: 50%;
-    padding: calc(0.75 * var(--button-space-unit));
-    @supports (aspect-ratio: 1/1) {
+    padding: calc(0.5 * var(--button-space-unit)) calc(1 * var(--button-space-unit));
+    //@supports (aspect-ratio: 1/1) {
       aspect-ratio: 1/1;
-    }
+    //}
   }
 
   &_text {

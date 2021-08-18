@@ -10,7 +10,7 @@
             Buttons
           </x-list-item>
           <x-list-item tag="n-link" to="/components/Card"> Card </x-list-item>
-          <x-list-item>Inputs</x-list-item>
+          <x-list-item tag="n-link" to="/components/inputs">Inputs</x-list-item>
           <x-list-item>Layout</x-list-item>
           <x-list-item tag="n-link" to="/layout/grid">Grid</x-list-item>
           <x-list-item tag="n-link" to="/components/Alert">Alerts</x-list-item>

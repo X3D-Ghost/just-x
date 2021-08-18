@@ -26,28 +26,26 @@
 		@content;
 	  }
 	}
-
 }
 
 @mixin media-only($breakpoint) {
   $min: map-get($breakpoints, $breakpoint);
   $n: index(map-keys($breakpoints), $breakpoint);
 
-  @debug $n;
-  $max: map-get($breakpoints, nth(map-keys($breakpoints), $n + 1));
+  $max: map-get($breakpoints, nth(map-keys($breakpoints), $n - 1));
   @media (min-width: $min) and (max-width: $max) {
 	@content;
   }
 }
 
 @mixin rwd($screen, $type: 'min', $screen2: 0) {
-  @if ($type = and) {
-	@media only screen and (min-width: $screen * 1px) and (max-width:  $screen2 * 1px) {
+  @if ($type == and) {
+	@media only screen and (min-width: $screen) and (max-width:  $screen2 - 1px) {
 	  @content;
 	}
   }
   @else {
-	@media only screen and (#{$type}-width: $screen * 1px) {
+	@media only screen and (#{$type}-width: $screen) {
 	  @content;
 	}
   }
@@ -61,10 +59,10 @@
 @mixin xxl { @include media(xxl){@content}}
 
 @function get-media-prefix($breakpoint) {
-  @debug $breakpoint;
-  @debug $breakpoints;
-  $breakpoint-value: map-get($breakpoints, $breakpoint);
+  //@debug $breakpoint;
+  //@debug $breakpoints;
   @if map-has-key($breakpoints, $breakpoint) {
+	$breakpoint-value: map-get($breakpoints, $breakpoint);
 	@if $breakpoint-value > 0 {
 	  @return #{$breakpoint}\:;
 	} @else {
@@ -74,8 +72,3 @@
 	@return null;
   }
 }
-
-//@debug get-media-prefix('xs');
-//@debug get-media-prefix('sm');
-//@debug get-media-prefix('xl');
-//@debug get-media-prefix('xxl');

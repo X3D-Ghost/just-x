@@ -91,13 +91,13 @@
     </section>
     <section>
       <h2>Circle</h2>
-      <XButton type="accent" circle> Accent </XButton>
-      <XButton type="primary" circle> Primary </XButton>
-      <XButton type="secondary" circle> Secondary </XButton>
-      <XButton type="success" circle> Success </XButton>
-      <XButton type="info" circle> Info </XButton>
-      <XButton type="warning" circle> Warning </XButton>
-      <XButton type="error" circle>Error </XButton>
+      <XButton type="accent" circle> + </XButton>
+      <XButton type="primary" circle> + </XButton>
+      <XButton type="secondary" circle> + </XButton>
+      <XButton type="success" circle> + </XButton>
+      <XButton type="info" circle> + </XButton>
+      <XButton type="warning" circle> + </XButton>
+      <XButton type="error" circle>+ </XButton>
     </section>
   </div>
 </template>
