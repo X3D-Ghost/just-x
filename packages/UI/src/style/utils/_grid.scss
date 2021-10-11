@@ -1,6 +1,10 @@
 @mixin grid_util($cols: $grid-columns, $rows: $grid-rows) {
   .grid {
-    display: grid;
+	//display: grid;
+	//grid-column-gap: var(--col-gap, $grid-col-gap);
+	//grid-row-gap: var(--row-gap, $grid-row-gap);
+	//grid-template-columns: repeat(var(--columns, #{$grid-columns}), 1fr);
+	//grid-template-rows: repeat(var(--rows, 1), 1fr);
     &_cols {
       @for $i from 1 through $cols {
         &_#{$i} {
@@ -8,6 +12,13 @@
         }
       }
     }
+	&_rows {
+	  @for $i from 1 through $rows {
+		&_#{$i} {
+		  grid-template-rows: repeat($i, minmax(0, 1fr));
+		}
+	  }
+	}
   }
 }
 $cols: $grid-columns;
@@ -16,11 +27,16 @@ $rows: $grid-rows;
 
 @mixin create-grid($cols: $grid-columns, $rows: $grid-rows) {
   @each $name, $width in $breakpoints {
-    @media screen and (min-width: $width) {
+    //@media screen and (min-width: $width) {
+    @include media-up($name) {
       $prefix: get-media-prefix($name);
-      //.#{$prefix}{
-      //  @include grid_util()
-      //}
+      .#{$prefix}grid__cols{
+        //@include grid_util()
+		@include create-grid-dimensions($cols, 'columns');
+      }
+	  .#{$prefix}grid_rows {
+		@include create-grid-dimensions($rows, 'rows');
+	  }
       @for $i from 1 through $cols {
         $classname: #{$prefix}grid_cols;
         //@include create-class($classname, grid-template-columns, repeat($i, minmax(0, 1fr)));
@@ -29,19 +45,17 @@ $rows: $grid-rows;
 			@include create-grid-cols($i);
 		  }
         }
-		.#{$prefix}grid {
-		  &_flow {
-			&_col {
-			  grid-auto-flow: column;
-			  &-dense {
-				grid-auto-flow: column dense;
-			  }
+		.#{$prefix}grid_flow {
+		  &_col {
+			grid-auto-flow: column;
+			&-dense {
+			  grid-auto-flow: column dense;
 			}
-			&_row {
-			  grid-auto-flow: row;
-			  &-dense {
-				grid-auto-flow: row dense;
-			  }
+		  }
+		  &_row {
+			grid-auto-flow: row;
+			&-dense {
+			  grid-auto-flow: row dense;
 			}
 		  }
 		}
@@ -86,10 +100,25 @@ $rows: $grid-rows;
 @mixin create-grid-row($col-width) {
   grid-row: span $col-width;
 }
-@include create-grid();
+
+@mixin create-grid-dimensions($count, $prop: columns) {
+  @for $i from 1 through $count {
+	&_#{$i} {
+	  grid-template-#{$prop}: repeat($i, minmax(0, 1fr));
+	}
+  }
+}
 
 .grid {
   display: grid;
-  grid-column-gap: $grid-gutter;
-  grid-row-gap: $grid-gutter;
+  grid: {
+	column-gap: var(--col-gap, $grid-col-gap);
+	row-gap: var(--row-gap, $grid-row-gap);
+	template: {
+	  columns: repeat(var(--columns, #{$grid-columns}), 1fr);
+	  rows: repeat(var(--rows, 1), 1fr);
+	}
+  };
 }
+
+@include create-grid();

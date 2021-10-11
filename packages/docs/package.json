@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "nuxt start --preserve-symlinks-main --preserve-symlinks",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint-fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
@@ -29,10 +29,11 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.3.5",
-    "module-alias": "^2.2.2",
+    "just-x": "file:../UI",
     "nuxt": "^2.15.8"
   },
   "devDependencies": {
+    "@nuxtjs/composition-api": "^0.29.2",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/storybook": "^4.1.1",
@@ -42,19 +43,14 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "fibers": "^5.0.0",
-    "husky": "^4.3.8",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
     "link-module-alias": "^1.2.0",
-    "lint-staged": "^10.5.4",
+    "lint-staged": "^11.1.2",
     "postcss": "^8.3.6",
-    "prettier": "^2.3.2",
-    "sass": "^1.37.5",
+    "prettier": "^2.4.1",
+    "sass": "^1.41.0",
     "sass-loader": "^10.2.0",
     "stylelint": "^13.13.1"
-  },
-  "_moduleAliases": {
-    "vue-x-ui": "../UI",
-    "@vue-x-ui": "../UI"
   }
 }

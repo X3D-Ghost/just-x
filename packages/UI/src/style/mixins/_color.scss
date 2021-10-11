@@ -1,0 +1,7 @@
+@mixin background-color($color, $fallback-opacity: 1.0) {
+  background-color: rgba($color, var(--bg-opacity, #{$fallback-opacity}));
+}
+
+@mixin text-color($color, $fallback-opacity: 1.0) {
+  color: rgba($color, var(--text-opacity, #{$fallback-opacity}));
+}

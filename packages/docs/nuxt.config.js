@@ -1,5 +1,5 @@
 export default {
-  mode: 'universal',
+  target: 'static',
   /*
    ** Headers of the page
    */
@@ -23,11 +23,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: [{ src: '../UI/src/style/main.scss', lang: 'scss' }],
+  css: [{ src: 'just-x/src/style/main.scss', lang: 'scss' }],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/vue-x-ui.js'],
+  plugins: ['~/plugins/justx.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -49,7 +49,7 @@ export default {
     '@nuxtjs/style-resources',
   ],
   styleResources: {
-    scss: ['../UI/src/style/styles.scss'],
+    scss: ['just-x/src/style/styles.scss'],
   },
   /*
    ** Axios module configuration
@@ -63,9 +63,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      config.resolve.alias['@vue-x-ui'] = '../UI'
-    },
     postcss: {
       // Add plugin names as key and arguments as value
       // Install them before as dependencies with npm or yarn
@@ -82,6 +79,11 @@ export default {
           grid: true,
         },
       },
+    },
+    extend(config, ctx) {
+      config.resolve = config.resolve || {}
+      config.resolve.symlinks = false
+      config.resolve.alias = config.resolve.alias || {}
     },
   },
   components: true,

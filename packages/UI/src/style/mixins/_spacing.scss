@@ -1,0 +1,26 @@
+@mixin create-space($values: 0 auto, $property: 'padding') {
+  $prop-value: '';
+  @debug (type-of($values));
+  @if type-of($values) == string or type-of($values) == number {
+	@if map-has-key($space-units, $values) {
+	  #{$property}: map-get($space-units, $values);
+	} @else if ($values == auto) {
+	  #{$property}: auto;
+	}
+  } @else if (type-of($values) == list) {
+	$prop-value: unquote('');
+	@each $value in $values {
+	  $prop-value: append($prop-value, get-space($value));
+	}
+	@debug $prop-value;
+	#{$property}: #{$prop-value};
+  }
+}
+
+@mixin padding($values) {
+  @include create-space($values, 'padding')
+}
+
+@mixin margin($values) {
+  @include create-space($values, 'margin')
+}

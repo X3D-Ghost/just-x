@@ -4,7 +4,7 @@
   $properties: map-get($data, 'property');
   //@debug $class_name;
   //@debug $values;
-  @debug $properties;
+  //@debug $properties;
   //@if (map-get($data, 'property') == 'string') {
 	//$properties: append((), map-get($data, 'property'))
   //}

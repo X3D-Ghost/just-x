@@ -17,3 +17,15 @@
   }
   @return $result
 }
+
+@function get-space($value: auto) {
+  //@debug $space-units;
+  @debug $value;
+  @if map-has-key($space-units, $value) {
+    @return map-get($space-units, $value)
+  } @else if ($value == auto) {
+    @return auto;
+  } @else {
+    @return $value;
+  }
+}

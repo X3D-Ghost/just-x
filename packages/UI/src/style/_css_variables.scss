@@ -12,50 +12,50 @@
   //colors
 
   @each $name, $color in $baseColors {
-    --color-#{"" + $name}: #{$color};
+	--color-#{"" + $name}: #{$color};
   }
 
-  --color-accent: var(--paper-blue-500);
-  --color-accent-light: var(--paper-blue-300);
-  --color-accent-dark: var(--paper-blue-800);
-  --color-primary: var(--paper-blue-500);
-  --color-primary-light: var(--paper-blue-300);
-  --color-primary-dark: var(--paper-blue-800);
-  --color-secondary: var(--paper-purple-500);
-  --color-secondary-light: var(--paper-purple-300);
-  --color-secondary-dark: var(--paper-purple-800);
-  --color-warning: var(--paper-orange-500);
-  --color-warning-light: var(--paper-orange-300);
-  --color-warning-dark: var(--paper-orange-800);
-  --color-success: var(--paper-green-500);
-  --color-success-light: var(--paper-green-300);
-  --color-success-dark: var(--paper-green-700);
-  --color-error: var(--paper-red-500);
-  --color-error-light: var(--paper-red-300);
-  --color-error-dark: var(--paper-red-700);
-  --color-info: var(--paper-blue-300);
-  --color-info-light: var(--paper-blue-200);
-  --color-info-dark: var(--paper-blue-500);
+  --color-accent: var(--blue-500);
+  --color-accent-light: var(--blue-300);
+  --color-accent-dark: var(--blue-800);
+  --color-primary: var(--blue-500);
+  --color-primary-light: var(--blue-300);
+  --color-primary-dark: var(--blue-800);
+  --color-secondary: var(--purple-500);
+  --color-secondary-light: var(--purple-300);
+  --color-secondary-dark: var(--purple-800);
+  --color-warning: var(--orange-500);
+  --color-warning-light: var(--orange-300);
+  --color-warning-dark: var(--orange-800);
+  --color-success: var(--green-500);
+  --color-success-light: var(--green-300);
+  --color-success-dark: var(--green-700);
+  --color-error: var(--red-500);
+  --color-error-light: var(--red-300);
+  --color-error-dark: var(--red-700);
+  --color-info: var(--blue-300);
+  --color-info-light: var(--blue-200);
+  --color-info-dark: var(--blue-500);
 
-  --color-black: var(--paper-grey-900);
-  --color-white: var(--paper-grey-100);
+  --color-black: var(--grey-900);
+  --color-white: var(--grey-100);
 
   //colors
 
-  --bg-color: var(--paper-grey-50);
+  --bg-color: var(--grey-50);
 
-  --text-color: var(--paper-grey-900);
+  --text-color: var(--grey-900);
 
-  --header-text-color: var(--paper-blue-grey-50);
+  --header-text-color: var(--blue-grey-50);
   --header-brand-color: var(--header-text-color);
   --header-brand-font-size: 3rem;
 
   --link-color: var(--color-primary);
 
-  --muted-color: var(--paper-grey-200);
+  --muted-color: var(--grey-200);
 
 
-  --space-unit: $space-unit;
+  --space-unit: #{$space-unit};
 
   --primary-border-radius: .25rem;
 
@@ -75,7 +75,7 @@
   --default-button-text-color: hsla(0, 0%, 0%, 0.87);
   --button-space-mult: 1;
   --button-space-unit: calc(var(--space-unit, 1rem) * var(--button-space-mult, 1));
-  --button-border-radius: calc(1);
+  --button-border-radius: var(--base-border-radius);
 
 
   /* shadows */
@@ -83,7 +83,8 @@
   --shadow-y: 0px;
   --shadow-blur: calc(0.5 * var(--space-unit));
   --shadow-thin: 0px;
-  --shadow-color: var(--paper-grey-900);
+  --shadow-color: var(--grey-900);
 
 }
+
 @import "color_palette";

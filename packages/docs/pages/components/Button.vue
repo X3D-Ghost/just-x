@@ -89,7 +89,7 @@
       <XButton type="warning" text> Warning </XButton>
       <XButton type="error" text>Error </XButton>
     </section>
-    <section>
+    <section class="buttons_circle">
       <h2>Circle</h2>
       <XButton type="accent" circle> + </XButton>
       <XButton type="primary" circle> + </XButton>
@@ -108,4 +108,11 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.buttons_circle {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+</style>

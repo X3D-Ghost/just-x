@@ -4,3 +4,4 @@
 /packages/UI/node_modules/.cache/storybook/
 /packages/UI/.pnp.js
 /packages/UI/yarn.lock
+/packages/UI/node_modules/
